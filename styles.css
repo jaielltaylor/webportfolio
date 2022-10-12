@@ -1,5 +1,16 @@
 body {
     margin: 0;
-    background: pink;
+    background: red;
     text-align: center;
+
+}
+
+#content p
+{
+    line-height: 20px;
+    margin: 30px;
+    padding-bottom: 20px;
+    text-align: justify;
+    width: 140px;
+    color: blue;
 }
