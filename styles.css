@@ -1,17 +1,190 @@
-body {
-    margin: 0;
-    background: red;
-    text-align: center;
-
-}
-
-#content p
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+@font-face
 {
-    line-height: 20px;
-    margin: 30px;
-    padding-bottom: 20px;
-    text-align: justify;
-    width: 140px;
-    color: blue;
-    background: blueviolet;
+    font-family: xenoDemon;
+    src: url(./fonts/XenoDemonCondensed-mdZP.otf);
+    font-weight: bold;
 }
+body {
+    cursor: default;
+    margin: 0;
+    font-family: 'Teko', sans-serif; /*How to use Teko font */
+    background: grey; /*rgb(29, 29, 29)*/
+    transition: background-color .5s;
+}
+
+.sidenav
+{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a 
+{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover 
+{
+    color: #f1f1f1;
+}
+  
+.sidenav .closebtn 
+{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+  
+@media screen and (max-height: 450px) 
+{
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+#sidebar-text
+{
+    cursor: pointer;
+    font-size: 50px;
+    color: whitesmoke;
+    margin-left: 5px;
+    margin-top: 200px
+}
+#introbar
+{
+    padding-left: 80px;
+    text-align: left;
+    background: rgb(29, 29, 29);
+    margin-top: -120px;
+    border-bottom:  8px inset;
+    border-color: rgb(54, 54, 54);
+    transition: background-color .5s;
+}
+#introbar h1
+{
+    font-size: 60px;
+    color:  rgb(131, 3, 3);
+    margin-bottom: -100px;
+}
+#introbar h2
+{
+    font-size: 40px;
+    color: whitesmoke;
+    margin-bottom: -1rem;
+    margin-left: 225px;
+}
+
+#fluff
+{
+    margin-top: -85px;
+    background-image: url(./images/red_circuits.jpg);
+    background-position: 0px 85px;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    padding-bottom: 300px;
+    text-align: center;
+}
+h1.fluff-title
+{
+    font-family: 'xenoDemon';
+    font-size: 100px;
+    padding-top: 200px;
+    margin-bottom: 10px;
+    color: whitesmoke;
+}
+p.border
+{
+    margin: auto;
+    border-bottom:  8px inset;
+    border-color: rgb(54, 54, 54);
+    width: 200px;
+    margin-bottom: -2rem;
+}
+h3.slogan
+{
+    font-size: 50px; 
+    color: whitesmoke;
+    margin-bottom: 10px; 
+}
+a.fluff-links { font-size: 30px; }
+a.fluff-links:link, a.fluff-links:visited
+{
+    background-color: rgb(54, 54, 54);
+    color: white;
+    padding: 5px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a.fluff-links:hover, a.fluff-links:active { background-color: rgb(29, 29, 29) }
+
+
+#projects
+{
+    text-align: center;
+    color: whitesmoke;
+    background: rgb(29, 29, 29);
+    border-top:  8px outset;
+    border-color: rgb(54, 54, 54);
+    transition: background-color .5s;
+}
+h1.projects-title 
+{
+    font-size: 50px; 
+    color:rgb(131, 3, 3);
+    margin-bottom: -10px; 
+}
+h3.role 
+{
+    margin-top: -5px;
+    font-size: 40px;
+    color:rgb(131, 3, 3);
+    margin-bottom: -10px; 
+}
+p.description
+{
+    font-size: 25px;
+    margin: auto;
+    max-width: 500px;
+    margin-bottom: 5px; /*Subject to change*/
+}
+#myBtn1, #myBtn2
+{
+    font-family: 'Teko', sans-serif;
+    font-size: 20px; 
+    cursor: pointer;
+    /*
+    border: none;
+    color: whitesmoke;
+    background-color: rgb(54, 54, 54);
+    */
+    margin-bottom: -20px;
+}
+h4.state
+{
+    font-size: 25px;
+}
+
+#more1, #more2 { display: none; }
+
+#personal 
+{ transition: background-color .5s; }
