@@ -5,6 +5,11 @@
     src: url(./fonts/XenoDemonCondensed-mdZP.otf);
     font-weight: bold;
 }
+@font-face {
+    font-family: kosugi;
+    src: url(./fonts/Kosugi-Regular.ttf);
+    font-weight: bold;
+}
 body {
     cursor: default;
     margin: 0;
@@ -26,7 +31,6 @@ body {
     transition: 0.5s;
     padding-top: 60px;
 }
-
 .sidenav a 
 {
     padding: 8px 8px 8px 32px;
@@ -36,12 +40,7 @@ body {
     display: block;
     transition: 0.3s;
 }
-  
-.sidenav a:hover 
-{
-    color: #f1f1f1;
-}
-  
+.sidenav a:hover { color: #f1f1f1; }  
 .sidenav .closebtn 
 {
     position: absolute;
@@ -50,21 +49,62 @@ body {
     font-size: 36px;
     margin-left: 50px;
 }
-  
+
 @media screen and (max-height: 450px) 
 {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    .langnav {padding-top: 15px;}
+    .langnav a {font-size: 18px;}
 }
 
+.langnav
+{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(29, 29, 29);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.langnav a
+{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.langnav a:hover { color: #f1f1f1; }
+.langnav .closebtn
+{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+div.header
+{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
 #sidebar-text
 {
     cursor: pointer;
     font-size: 50px;
     color: whitesmoke;
     margin-left: 5px;
-    margin-top: 200px
+    margin-top: 200px;
 }
+#sidebar-text:hover { color: rgb(131, 3, 3); } /*ask dom for a color to use for this*/
 #introbar
 {
     padding-left: 80px;
@@ -135,8 +175,21 @@ a.fluff-links:link, a.fluff-links:visited
     text-decoration: none;
     display: inline-block;
 }
-a.fluff-links:hover, a.fluff-links:active { background-color: rgb(29, 29, 29) }
-
+a.fluff-links:hover, a.fluff-links:active, #fluff-personal:hover { background-color: rgb(29, 29, 29) }
+#fluff-resume
+{
+    margin-right: 10px
+}
+#fluff-personal
+{
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    padding: 5px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
 
 #projects
 {
@@ -170,14 +223,16 @@ p.description
 #myBtn1, #myBtn2
 {
     font-family: 'Teko', sans-serif;
-    font-size: 20px; 
+    font-size: 30px; 
     cursor: pointer;
-    /*
     border: none;
     color: whitesmoke;
-    background-color: rgb(54, 54, 54);
-    */
+    background-color: rgb(29, 29, 29);
     margin-bottom: -20px;
+}
+#myBtn1:hover, #myBtn2:hover
+{
+    color: rgb(131, 3, 3);
 }
 h4.state
 {
@@ -186,5 +241,176 @@ h4.state
 
 #more1, #more2 { display: none; }
 
-#personal 
-{ transition: background-color .5s; }
+.popup 
+{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 50px;
+    z-index: 999999;
+}
+.popup.popup-fullscreen { padding: 0; }
+.popup iframe 
+{
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+.overflow-hidden 
+{
+    height: 100vh;
+    overflow: hidden;
+}  
+.go-back {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+#personal
+{
+    margin-top: -35px; 
+    height: 100vh; 
+}
+.personal-main
+{
+    background: rgb(131, 3, 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+  
+.personal-main-content > div
+{
+    background: url("./images/little-skeelball-appreciation-wallpaper.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 4rem 4rem 2.5rem 5rem;
+    text-align: center;
+}  
+.personal-main-content
+{
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.39);
+    -webkit-box-shadow: 0px 0px 18px -10px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
+}  
+.personal-img img
+{
+    display: block;
+    width: 200px;
+    margin-top: -1rem;
+}
+.personal-img
+{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 400% 400% 5% 5% / 700% 700% 100% 100%;
+    transition: all 0.5s ease-in-out;
+}
+  
+.shadow
+{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+}
+.shadow::after
+{
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    height: 7px;
+    width: 50px;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+.shadow:hover .personal-img { transform: translateY(-10px); }
+.shadow:hover::after { opacity: 1; }
+
+.personal-main-content h2
+{
+    font-size: 2rem;
+    margin: 2.2rem 0 0.6rem 0;
+    line-height: 1.2;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #edffec;
+}
+.personal-main-content h3
+{
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin-top: 1.2rem;
+}
+.personal-name
+{
+    font-family: 'xenoDemon';
+    color: whitesmoke;
+}
+.personal-title
+{
+    font-family: 'Teko', sans-serif; 
+    color: whitesmoke;
+}
+.icons
+{
+    margin-top: -35px;
+    background: rgb(171, 7, 7);
+    display: flex;
+    justify-content: center;
+    padding: 0.8rem 0;
+}
+.icons li
+{
+    list-style-type: none;
+    background: rgb(29, 29, 29);
+    color: whitesmoke;
+    width: 40px;
+    height: 40px;
+    margin: 0 0.5rem;
+    margin-right: -0.25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.icons li:hover
+{
+    background: rgb(54, 54, 54);
+    color: whitesmoke;
+}
+.icons a:after { display: none; }
+.icons button
+{
+    background: transparent;
+    border: 0;
+    margin-right: -0.35rem;
+}
+.icons a { color: inherit; }
+.text-envelope{ color: #000000; }

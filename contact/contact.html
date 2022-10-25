@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="../contact/contact-styles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div id="container-all-section">
+
+        <!-- CONTENITORE DEL TITOLO  -->
+
+        <div id="title-contact-me">
+
+            <h1 id="title-contact" class="animate__animated animate__pulse">CONTACT </h1>
+            <H1 id="me" class="animate__animated animate__pulse" > ME</H1>
+
+        </div>
+
+            <!-- Inizio sezione forum  -->
+
+
+            <div id="container-forum">
+
+                <div id="contact-forum" class="animate__animated animate__fadeInRight">
+                    <form action="https://formsubmit.co/el/gumani" method="post">
+
+                        <!-- <input type="hidden" name="_captcha" value="true">  -->
+
+                    <input type="hidden" name="_next" value="https://the-true-blue.github.io/Contact/succes.html" > <!--remember to change this to your own-->                    
+                    <input type="hidden" name="_autoresponse" value="L'email è stata inviata con successo">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="container">
+                        <input class="small-input input" type="text" placeholder=" your name" name="name" id="name" required>
+                        <input class="small-input input" type="tel" placeholder=" your number" name="telephone" id="telephone"pattern="[0-9]{3}[0-9]{4}[0-9]{3}" required>
+                    </div>
+
+                    <div class="container">
+                        <input class="small-input input" type="email" placeholder=" your email" id="email" name="email" required>
+                        <input class="small-input input"  type="text" placeholder=" your subject"id="subject" name="subject" required>
+                    </div>
+
+                    <div id="container-due">
+                    <textarea class="container input" id="text-description" rows = "5" cols = "50" name = "description" placeholder="Insert your message" name="message"></textarea>
+
+                    <div id="button-submit">
+                        <input type = "submit" data-modal-target="#modal" value = "SUBMIT" id="submit" />
+                    </div>
+                </div>
+                </form>
+                </div>
+            </div>
+    </div>
+
+    <script src="../js-files/main.js" type="text/javascript"></script>
+
+
+</body>
+</html>

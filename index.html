@@ -1,10 +1,12 @@
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-
+    <script src="https://kit.fontawesome.com/26697a8b94.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js-files/main.js"></script>
     <script>
         function myFunction(dotId, moreId, btnId)
         {
@@ -15,13 +17,13 @@
             if (dots.style.display === "none") 
             {
                 dots.style.display = "inline";
-                btnText.innerHTML = "See Description"; 
+                btnText.className = "fa-solid fa-square-caret-down" 
                 moreText.style.display = "none";
             } 
             else 
             {
                 dots.style.display = "none";
-                btnText.innerHTML = "Dismiss"; 
+                btnText.className = "fa-solid fa-square-caret-up"; 
                 moreText.style.display = "inline";
             }
         }
@@ -33,6 +35,12 @@
             document.getElementById("introbar").style.opacity= "0.5";
             document.getElementById("fluff").style.opacity= "0.5";
             document.getElementById("projects").style.opacity= "0.5";
+            document.getElementById("personal").style.opacity= "0.5";
+            
+            document.getElementById("introbar").style.pointerEvents= "none";
+            document.getElementById("fluff").style.pointerEvents= "none";
+            document.getElementById("projects").style.pointerEvents= "none";
+            document.getElementById("personal").style.pointerEvents= "none";
         }
           
         function closeNav() 
@@ -41,35 +49,61 @@
             document.getElementById("introbar").style.opacity= "1";
             document.getElementById("fluff").style.opacity= "1";
             document.getElementById("projects").style.opacity= "1";
+            document.getElementById("personal").style.opacity= "1";
+
+            document.getElementById("introbar").style.pointerEvents= "all";
+            document.getElementById("fluff").style.pointerEvents= "all";
+            document.getElementById("projects").style.pointerEvents= "all";
+            document.getElementById("personal").style.pointerEvents= "all";
+        }
+        //The below functions are for Multilingual Support which is a work in progress
+        function openLang()
+        {
+            document.getElementById("myLangnav").style.width = "75px";
+            document.getElementById("myLangnav").style.opacity = "1"
+        }
+
+        function closeLang()
+        {
+            document.getElementById("myLangnav").style.width = "0";
         }
     </script>
 </head>
 <body>
-
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn"
         onclick="closeNav()">&times;</a>
         <a href="#">Logo</a>
-        <a href="#">Language</a>
-        <a href="#">???</a>
-        <a href="#">???</a>
+        <a href="./downloads/Jaiell_Taylor_Resume.docx" download="Jaiell_Taylor_Resume" target="_blank"><i class="fa-solid fa-download"></i></a>
+        <!--<a href="#" onclick="openLang()"><i class="fa-solid fa-language"></i></a> Multilingual Support WIP-->
+        <a href="#" onclick="closeNav();scrollToPersonal()"><i class="fa-solid fa-user"></i></a>
+    </div>
+    <!--Below div cannot be reached. Multilingual Support is still work in progress-->
+    <div id="myLangnav" class="langnav">
+        <a href="javascript:void(0)" class="closebtn"
+        onclick="closeLang()">&times;</a>
+        <a href="#">ENG</a>
+        <a href="#">SPA</a>
+        <a href="#">JPN</a>
+    </div>
+    
+    <div class="header">
+        <span id="sidebar-text" 
+        onclick="openNav()">&#9776;</span>
+        <div id="introbar">
+            <h1>Jaiell Taylor</h1>
+            <h2>Game Programmer</h2>
+            <p id="intro-border"></p>
+        </div>
     </div>
 
-    <span id="sidebar-text" 
-    onclick="openNav()">&#9776;</span>
-    <div id="introbar">
-        <h1>Jaiell Taylor</h1>
-        <h2>Game Programmer</h2>
-        <p id="intro-border"></p>
-    </div>
     <div id="fluff">
         <div id="fluff-text">
-            <h1 class="fluff-title">Web Portfolio</h1>
+            <h1 class="fluff-title">Hitstreak</h1>
             <p class="border"></p>
-            <h3 class="slogan">Building connections through games</h3>
-            <a class="fluff-links" href="google.com" target="_blank">RESUME</a>
-            <a class="fluff-links" href="github.com" target="_blank">LINKS</a>
-
+            <h3 class="slogan">Games With Impact</h3>
+            <a class="fluff-links" id="fluff-resume" href="./downloads/Jaiell_Taylor_Resume.docx" download="Jaiell_Taylor_Resume" target="_blank">RESUME</a>
+            <a class="fluff-links" id="fluff-personal" onclick="scrollToPersonal()">LINKS</a>
         </div>
     </div>
     
@@ -82,7 +116,7 @@
         vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis 
         imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh
         tempor dummy.</span></p>
-        <button onclick="myFunction('dots1', 'more1', 'myBtn1')" id="myBtn1">See Description</button>
+        <button onclick="myFunction('dots1', 'more1', 'icon1')" id="myBtn1"><i class="fa-solid fa-square-caret-down" id="icon1"></i></button>
         <h4 class="state">Complete</p>
 
         <h1 class="projects-title">Itch.io Projects</h1>
@@ -93,12 +127,35 @@
         vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis 
         imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh 
         tempor weirdo.</span></p>
-        <button onclick="myFunction('dots2', 'more2', 'myBtn2')" id="myBtn2">See Description</button>
+        <button onclick="myFunction('dots2', 'more2', 'icon2')" id="myBtn2"><i class="fa-solid fa-square-caret-down" id="icon2"></i></button>
         <h4 class="state">Complete</p>
-        </div>
+    </div>
 
     <div id="personal">
-        <p>Nothing to see here yet</p>
+        <div class="personal-main" id="aboutme">
+          <div class="personal-main-content">
+            <div>
+              <div class="shadow">
+                <div class="personal-img">
+                  <img src="./images/profilepic.jpg" alt="personal image">
+                </div>
+              </div>
+              <h2 class="personal-name"> Jaiell Taylor </h2>
+              <h3 class="personal-title"> Software Engineer & Game Programmer </h3>
+            </div>
+  
+            <ul class = "icons">
+              <button type="button" id="open-contact"><li><i class ="fa fa-envelope"></i></li></button>
+              <li><a href="https://github.com/stars/jaielltaylor/lists/my-projects-and-collabs"><i class ="fa brands fa-github"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/jaiell-taylor-71463a20a/"><i class ="fab fa-linkedin"></i></a></li>
+              <li><a href="https://itch.io/profile/jaiell-taylor"><i class ="fab fa-itch-io"></i></a></li>
+            </ul>
+          </div>
+    </div>
+
+    <div id="contact-holder" class="popup popup-fullscreen">
+        <button class="go-back"><i class="fa-solid fa-circle-arrow-right"></i></button>
+        <iframe src="./contact/contact.html"></iframe>
     </div>
 </body>
 </html>
