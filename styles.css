@@ -45,7 +45,7 @@ body {
 {
     position: absolute;
     top: 0;
-    right: 25px;
+    right: 18px;
     font-size: 36px;
     margin-left: 50px;
 }
@@ -54,9 +54,55 @@ body {
 {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
-    .langnav {padding-top: 15px;}
-    .langnav a {font-size: 18px;}
+    .QAnav {padding-top: 15px;}
+    .QAnav a {font-size: 18px;}
 }
+
+.QAnav
+{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(29, 29, 29);
+    overflow: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.QAnav a
+{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.QAnav a:hover { color: #f1f1f1; }
+.QAnav .closebtn
+{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+#dots3, #dots4, #dots5
+{
+    color: whitesmoke;
+    margin-left: 34px;
+    margin-top: -1rem;
+}
+#more3, #more4, #more5
+{ 
+    display: none;
+    color: whitesmoke;
+    margin-left: 34px;
+    margin-top: -1rem;
+}
+
 
 .langnav
 {
@@ -128,6 +174,16 @@ div.header
     margin-bottom: -1rem;
     margin-left: 225px;
 }
+#introbar h3
+{
+    cursor: pointer;
+    color: whitesmoke;
+    font-size: 40px;
+    margin-left: 93%;
+    margin-top: -3.25rem;
+    margin-bottom: -30px;
+}
+#introbar h3:hover { color: rgb(131, 3, 3); }
 
 #fluff
 {
@@ -190,15 +246,35 @@ a.fluff-links:hover, a.fluff-links:active, #fluff-personal:hover { background-co
     text-decoration: none;
     display: inline-block;
 }
-
-#projects
+@media screen and (max-width: 2000px)
 {
-    text-align: center;
-    color: whitesmoke;
-    background: rgb(29, 29, 29);
-    border-top:  8px outset;
-    border-color: rgb(54, 54, 54);
-    transition: background-color .5s;
+    #projects
+    {
+        border-left: solid;
+        border-right: solid;
+        border-width: 400px;
+        border-color: rgb(54, 54, 54);
+        text-align: center;
+        color: whitesmoke;
+        background: rgb(29, 29, 29);
+        border-top:  8px outset;
+        border-color: rgb(54, 54, 54);
+        transition: background-color .5s;
+    }
+}
+@media screen and (max-width: 1750px)
+{
+    #projects
+    {
+        border-left: none;
+        border-right: none;
+        text-align: center;
+        color: whitesmoke;
+        background: rgb(29, 29, 29);
+        border-top:  8px outset;
+        border-color: rgb(54, 54, 54);
+        transition: background-color .5s;
+    }
 }
 h1.projects-title 
 {
@@ -213,6 +289,13 @@ h3.role
     color:rgb(131, 3, 3);
     margin-bottom: -10px; 
 }
+h3.newRole
+{
+    margin-top: -40px;
+    font-size: 40px;
+    color:rgb(131, 3, 3);
+    margin-bottom: -10px; 
+}
 p.description
 {
     font-size: 25px;
@@ -220,7 +303,7 @@ p.description
     max-width: 500px;
     margin-bottom: 5px; /*Subject to change*/
 }
-#myBtn1, #myBtn2
+#myBtn1, #myBtn2, #myBtn6, #myBtn7, #myBtn8, #myBtn9, #myBtn10, #myBtn11
 {
     font-family: 'Teko', sans-serif;
     font-size: 30px; 
@@ -230,7 +313,7 @@ p.description
     background-color: rgb(29, 29, 29);
     margin-bottom: -20px;
 }
-#myBtn1:hover, #myBtn2:hover
+#myBtn1:hover, #myBtn2:hover, #myBtn6:hover, #myBtn7:hover, #myBtn8:hover, #myBtn9:hover, #myBtn10:hover, #myBtn11:hover
 {
     color: rgb(131, 3, 3);
 }
@@ -238,8 +321,7 @@ h4.state
 {
     font-size: 25px;
 }
-
-#more1, #more2 { display: none; }
+#more1, #more2, #more6, #more7, #more8, #more9, #more10, #more11 { display: none; }
 
 .popup 
 {
@@ -278,10 +360,26 @@ h4.state
     cursor: pointer;
 }
 
-#personal
+@media screen and (max-width: 2000px)
 {
-    margin-top: -35px; 
-    height: 100vh; 
+    #personal
+    {
+        border-left: solid;
+        border-right: solid;
+        border-width: 400px;
+        border-color: rgb(171, 7, 7);
+        margin-top: -35px; 
+        height: 100vh; 
+    }
+}
+@media screen and (max-width: 1500px)
+{
+    #personal
+    {
+        border: none;
+        margin-top: -35px; 
+        height: 100vh; 
+    }
 }
 .personal-main
 {
