@@ -12,7 +12,11 @@
 }
 body {
     cursor: default;
+    width: 100%;
+    height: 100%;
+    padding: 0;
     margin: 0;
+    overflow-x: hidden;
     font-family: 'Teko', sans-serif; /*How to use Teko font */
     background: grey; /*rgb(29, 29, 29)*/
     transition: background-color .5s;
@@ -102,7 +106,8 @@ body {
     margin-left: 34px;
     margin-top: -1rem;
 }
-
+#logoSide { margin-left: -50%; }
+#logoSide:hover { transform: translateY(-10px); }
 
 .langnav
 {
@@ -234,7 +239,7 @@ a.fluff-links:link, a.fluff-links:visited
 a.fluff-links:hover, a.fluff-links:active, #fluff-personal:hover { background-color: rgb(29, 29, 29) }
 #fluff-resume
 {
-    margin-right: 10px
+    margin-right: 10px;
 }
 #fluff-personal
 {
@@ -246,6 +251,7 @@ a.fluff-links:hover, a.fluff-links:active, #fluff-personal:hover { background-co
     text-decoration: none;
     display: inline-block;
 }
+
 @media screen and (max-width: 2000px)
 {
     #projects
@@ -261,6 +267,21 @@ a.fluff-links:hover, a.fluff-links:active, #fluff-personal:hover { background-co
         border-color: rgb(54, 54, 54);
         transition: background-color .5s;
     }
+
+    #pattern 
+    { margin-bottom: -212.5%; /*-210.5%;*/ /*margin-right: 10%; FUCK THAT MARGIN*/ }
+    #fistL0 { margin-left: -4.5%; }  /*regular img formatting*/
+    #fistR0 /*Use this for yflipped img formatting*/
+    { 
+        margin-left: 74.4%;
+        margin-top: -26%;
+    }
+    #fistL1 { margin-left: -4.5%; }  /*Use this for zflipped img formatting*/
+    #fistR1 /*Use this for xflipped img formatting*/
+    { 
+        margin-left: 78.25%;
+        margin-top: -26%;
+    }
 }
 @media screen and (max-width: 1750px)
 {
@@ -275,6 +296,7 @@ a.fluff-links:hover, a.fluff-links:active, #fluff-personal:hover { background-co
         border-color: rgb(54, 54, 54);
         transition: background-color .5s;
     }
+    #pattern { display: none; }
 }
 h1.projects-title 
 {
