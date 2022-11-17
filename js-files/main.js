@@ -26,6 +26,23 @@ function scrollToPersonal()
     });
 }
 
+function scrollToTop()
+{
+  document.querySelector('.header').scrollIntoView
+  ({
+    behavior: 'smooth'
+  });
+}
+
+function scrollToThing()
+{
+  window.scrollTo
+  ({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
+
 $(document).ready(function () {
     $('#open-contact').on('click', function()
     {
