@@ -269,17 +269,17 @@ a.fluff-links:hover, a.fluff-links:active, #fluff-personal:hover { background-co
     }
 
     #pattern 
-    { margin-bottom: -212.5%; /*-210.5%;*/ /*margin-right: 10%; FUCK THAT MARGIN*/ }
-    #fistL0 { margin-left: -4.5%; }  /*regular img formatting*/
+    { margin-bottom: -225.5%; /*-210.5%;*/ /*margin-right: 10%; FUCK THAT MARGIN*/ }
+    #fistL0 { margin-left: -4.75%; }  /*regular img formatting*/
     #fistR0 /*Use this for yflipped img formatting*/
     { 
-        margin-left: 74.4%;
+        margin-left: 74%;
         margin-top: -26%;
     }
-    #fistL1 { margin-left: -4.5%; }  /*Use this for zflipped img formatting*/
+    #fistL1 { margin-left: -4.75%; }  /*Use this for zflipped img formatting*/
     #fistR1 /*Use this for xflipped img formatting*/
     { 
-        margin-left: 78.25%;
+        margin-left: 77.75%;
         margin-top: -26%;
     }
 }
