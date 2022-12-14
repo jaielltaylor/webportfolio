@@ -33,7 +33,7 @@ body {
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 3.25%; /*About 60px*/
 }
 .sidenav a 
 {
@@ -49,9 +49,9 @@ body {
 {
     position: absolute;
     top: 0;
-    right: 18px;
-    font-size: 36px;
-    margin-left: 50px;
+    right: 25%; /*About 18px*/
+    font-size: 200%; /*About 36px*/
+    margin-left: 312.5%; /*About 50 px*/
 }
 
 @media screen and (max-height: 450px) 
@@ -73,7 +73,7 @@ body {
     background-color: rgb(29, 29, 29);
     overflow: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 3.25%; /*About 60px*/
 }
 .QAnav a
 {
@@ -90,7 +90,7 @@ body {
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 36px;
+    font-size: 36px; /*About 200%*/
     margin-left: 50px;
 }
 #dots3, #dots4, #dots5
