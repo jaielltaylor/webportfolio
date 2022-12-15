@@ -22,6 +22,89 @@ body {
     transition: background-color .5s;
 }
 
+/*Mobile Formatting and Sizing*/
+@media screen and (max-height: 450px)
+{
+    .sidenav
+    {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 3.25%; /*About 60px*/
+    }
+    .sidenav a 
+    {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 50px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    .sidenav a:hover { color: #f1f1f1; }  
+    .sidenav .closebtn 
+    {
+        position: absolute;
+        top: 0;
+        right: 25%; /*About 18px*/
+        font-size: 50px; /*About 36px*/
+        margin-left: 312.5%; /*About 50px*/
+    }
+
+    .QAnav
+    {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(29, 29, 29);
+        overflow: hidden;
+        transition: 0.5s;
+        padding-top: 3.25%; /*About 60px*/
+    }
+    .QAnav a
+    {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    .QAnav a:hover { color: #f1f1f1; }
+    .QAnav .closebtn
+    {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px; /*About 200%*/
+        margin-left: 50px;
+    }
+    #dots3, #dots4, #dots5
+    {
+        color: whitesmoke;
+        margin-left: 34px;
+        margin-top: -1rem;
+    }
+    #more3, #more4, #more5
+    { 
+        display: none;
+        color: whitesmoke;
+        margin-left: 34px;
+        margin-top: -1rem;
+    }
+    #logoSide { margin-left: -50%; }
+    #logoSide:hover { transform: translateY(-10px); }
+}
+
 .sidenav
 {
     height: 100%;
